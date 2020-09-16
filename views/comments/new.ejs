@@ -1,0 +1,16 @@
+<%- include('../partials/header'); -%>
+<div class="container form-page" >  
+    <div class="display-4 text-center mb-5">
+       Add a comment to  <strong><%= camp.name %></strong>
+    </div>
+    <form class="form-signin mt-5" action = '/campgrounds/<%= camp._id %>/comments' method = 'POST' >
+        <div class="form-group">
+            <label for="inputPassword" class="sr-only">Comment</label>
+            <textarea type="text" id="inputPassword" class="form-control" placeholder="put your commment here" rows="2" name = 'commentText'></textarea>
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block w-50 mx-auto" type="submit">SUBMIT</button>
+    </form>
+</div> 
+ 
+<%- include('../partials/footer'); -%>

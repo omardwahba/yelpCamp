@@ -1,0 +1,23 @@
+<%- include('../partials/header'); %>
+
+<div class = "container">
+    <h1 class="display-3">This is our Campgrounds</h1>
+    <a href = '/campgrounds/new' class="btn btn-secondary btn-lg"> add new campground </a>
+    <div class="container mt-4">
+        <div class="row">
+            <% camps.forEach(function(camp){ %>
+                <div class=" col-4 pb-4 pt-4">
+                    
+                        <a class="ui medium header" href="/campgrounds/<%= camp._id %>"> <%= camp.name%> </a>
+                        <img class="rounded" style="width: 90%; height: 90%;" src = <%= camp.url %> >
+                    
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <a href = '/' class="btn btn-danger btn-lg"> << Back Home</a>
+</div>
+
+
+<%- include('../partials/footer'); %>

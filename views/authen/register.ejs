@@ -1,0 +1,17 @@
+<%- include('../partials/header'); -%>
+ <div class="container">
+    <h1 class="display-3"> Welcome to YelpCamp SignUp</h1>
+    <div class="text-center container" style=" width:fit-content; margin: auto auto; margin-top: 10%; " >  
+        <form class="form-signin" action = '/register' method = 'POST' style="max-width: 350px;">
+            <h1 class="h3 mb-3 font-weight-normal">Please fill required information</h1>
+            <label for="inputEmail" class="sr-only">Username</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="Username" name = 'username'>
+            <label for="inputPassword" class="sr-only">password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="password" name = 'password'>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">SUBMIT</button>
+        </form>
+    </div> 
+
+ </div>
+
+<%- include('../partials/footer'); -%>
