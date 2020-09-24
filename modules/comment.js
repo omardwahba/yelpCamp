@@ -9,7 +9,11 @@ var commmentSchema = moongose.Schema({
         },
         name : String
     },
-    commentTime : {type : Date , default : Date.now()}
+    commentTime : {type : Date , default : Date.now()} ,
+    rate : {
+        type : Number ,
+        default : 0
+    }
 });
 
 module.exports =  moongose.model('Comment', commmentSchema) ;

@@ -21,6 +21,7 @@ router.get('/new', middleware.isLoggedIn,  function(req, res){
 
 router.post('/', middleware.isLoggedIn,function(req, res){
     var newCamp = req.body.camp ;
+    newCamp.shortDiscrip = newCamp.shortDiscrip.substring(0,100);
     newCamp.author = {} ;
     newCamp.author.id = req.user._id ;
     newCamp.author.name = req.user.username ;

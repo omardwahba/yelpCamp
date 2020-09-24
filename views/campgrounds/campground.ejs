@@ -1,23 +1,50 @@
 <%- include('../partials/header'); %>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
 
-<div class = "container">
-    <h1 class="display-3">This is our Campgrounds</h1>
-    <a href = '/campgrounds/new' class="btn btn-secondary btn-lg"> add new campground </a>
-    <div class="container mt-4">
-        <div class="row">
-            <% camps.forEach(function(camp){ %>
-                <div class=" col-4 pb-4 pt-4">
-                    
-                        <a class="ui medium header" href="/campgrounds/<%= camp._id %>"> <%= camp.name%> </a>
-                        <img class="rounded" style="width: 90%; height: 90%;" src = <%= camp.url %> >
-                    
-                </div>
-                <% }); %>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">YelpCamp </h1>
+            <p class="lead"> New way to find organize,search and improve your camping experience </p>
+            <hr class="my-4">
+            <p></p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">Add Camp</a>
+            </p>
         </div>
+    
+        <div class="ui four cards">
+            <% camps.forEach(function(camp){ %>
+                <div class="ui card" >
+                <div class="image">
+                    <img src= <%= camp.url %> >
+                </div>
+                <div class="content">
+                    <div class="header "> <%= camp.name%> </div>
+                    <div class="description">
+                        <%= camp.discription.substring(0,100)%>..
+                    </div>
+                </div>
+                <div class="extra">
+                    <div class="header">Users Rating</div>
+                    <div class="ui star rating" data-rating="5"> <% for(i = 0 ; i < (camp.rating.rate)/10 ; i++){ %> <i class="active icon"></i> <%}%> </div>
+                </div>
+                <div class="ui bottom attached button">
+                    <a href="/campgrounds/<%= camp._id %>">
+                       Find more .. 
+                    </a>    
+                </div>
+            </div>
+            <% }) %>
+        
+        
+    
+        </div>
+
     </div>
 
-    <a href = '/' class="btn btn-danger btn-lg"> << Back Home</a>
-</div>
+
 
 
 <%- include('../partials/footer'); %>

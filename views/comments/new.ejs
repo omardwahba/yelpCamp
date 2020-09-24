@@ -1,16 +1,41 @@
 <%- include('../partials/header'); -%>
 <div class="container form-page" >  
     <div class="display-4 text-center mb-5">
-       Add a comment to  <strong><%= camp.name %></strong>
+       Review  <strong><%= camp.name %></strong>
     </div>
-    <form class="form-signin mt-5" action = '/campgrounds/<%= camp._id %>/comments' method = 'POST' >
+    <form c action = '/campgrounds/<%= camp._id %>/comments' method = 'POST' >
+
         <div class="form-group">
-            <label for="inputPassword" class="sr-only">Comment</label>
-            <textarea type="text" id="inputPassword" class="form-control" placeholder="put your commment here" rows="2" name = 'commentText'></textarea>
+            <label for="inoutComment">Comment</label>
+            <textarea type="text" id="inoutComment" class="form-control" placeholder="put your commments here" rows="2" name = 'commentText'></textarea>
+        </div>
+        <div class="form-row">
+            <div class="col-md-8">
+                <label for="starsRate">Rate the Camp</label>
+                <select class="form-control" id="starsRate" name="commentRate">
+                    <option>1 - Very Bad</option>
+                    <option>2 - Not good</option>
+                    <option>3 - quiet well</option>
+                    <option>4 - Very Godd</option>
+                    <option>5 - Excellent</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div id= "starsContainer" class="float-right">
+                    <span class = "fa fa-star checked" id="star1"></span>
+                    <span class = "fa fa-star " id="star2"></span>
+                    <span class = "fa fa-star " id="star3"></span>
+                    <span class = "fa fa-star " id="star4"></span>
+                    <span class = "fa fa-star " id="star5"></span>
+
+                </div>
+            </div>
         </div>
         
-        <button class="btn btn-lg btn-primary btn-block w-50 mx-auto" type="submit">SUBMIT</button>
+        <button class="btn btn-primary btn-block w-50 mx-auto" type="submit">SUBMIT</button>
     </form>
 </div> 
- 
+<link rel="stylesheet" href = "/stylesheets/newCommentStyle.css">
+<script src="/JS/custom/newComment.js"></script>
+
 <%- include('../partials/footer'); -%>

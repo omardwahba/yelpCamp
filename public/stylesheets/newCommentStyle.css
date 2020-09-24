@@ -1,0 +1,13 @@
+#starsContainer{
+    margin: 2rem 2rem;
+    margin-right: 0;
+}
+.fa-star {
+    font-size: 2rem;
+}
+.checked{
+    color: gold;
+}
+option{
+    text-transform: uppercase;
+}

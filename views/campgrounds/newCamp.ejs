@@ -1,17 +1,39 @@
 <%- include('../partials/header'); -%>
-<div class="text-center container" style=" width:fit-content; margin: auto auto; margin-top: 10%; " >  
-    <form class="form-signin" action = '/campgrounds' method = 'POST' style="max-width: 330px;">
-        <h1 class="h3 mb-3 font-weight-normal">Please fill required information</h1>
-        <label for="inputEmail" class="sr-only">Camp Name</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="NAME" name = 'camp[name]'>
+<div class=" container" >  
+    <form  action = '/campgrounds' method = 'POST'>
+        <h1 class="font-weight-normal display-5">Add a New camp</h1>
+        <div class="form-row ">
+            <div class="form-group col-md-10">
+                <label for="inputEmail">Campground name</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="NAME" name = 'camp[name]'>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPrice">Price / night</label>
+                <div class="input-group">
+                    <input type="number" id="inputPrice" class="form-control" placeholder="00.0 $" name = 'camp[pricePerNight]' min="5.00" step="0.5">
+                    <div class="input-group-append">
+                        <span class="input-group-text">$</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <label for="inputPassword" class="sr-only">Image</label>
-        <input type="text" id="inputPassword" class="form-control" placeholder="IMAGE URL" name = 'camp[url]'>
+        <div class = "form-group">
+                <label for="inputImage">Image</label>
+                <input type="text" id="inputImage" class="form-control" placeholder="IMAGE URL" name = 'camp[url]'>
+        </div>
+        <div class="form-group">
+            <label for="inputSmallDiscription">Summary</label>
+            <textarea type="text" id="inputSmallDiscription" class="form-control" placeholder="put your summary about the camp here.. 100 charcter limit" name = 'camp[shortDiscrip]'  maxlength="100"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="inputDiscription">Description</label>
+            <textarea type="text" id="inputDiscription" class="form-control" placeholder="put your description here .." name = 'camp[discription]' rows="5"></textarea>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-lg btn-primary w-50" type="submit">SUBMIT</button>
+        </div>
 
-        <label for="inputDiscription" class="sr-only">Description</label>
-        <input type="text" id="inputDiscription" class="form-control" placeholder="put your description here .." name = 'camp[discription]'>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">SUBMIT</button>
     </form>
 </div> 
 
