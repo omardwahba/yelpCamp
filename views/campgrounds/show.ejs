@@ -31,11 +31,19 @@
 
                     <% camp.comments.forEach( (comment => { %>
                         <li class="list-group-item comment">
-                            <strong><%= comment.author.name %></strong> 
+                            <strong class="CommentUser"><%= comment.author.name %>  </strong> 
                             <span class="float-right"> 10 days ago</span>
-                            <p>
-                                <%= comment.text %>
-                            </p>
+                            <div class="text-muted"> Rated : 
+                        <% for(let i = 0 ; comment.rate && i < Math.floor(comment.rate) ; i++){ %>
+                            <div class="fa fa-star checked"></div>
+                            <% } %>
+                            <% if(comment.rate && comment.rate > 0){ %>
+                            <span class=""> <%= comment.rate.toFixed(1) %> / 5</span>
+                            <% } else { %>
+                                <span class="">No rate for this user</span>
+                            <% } %>
+                            </div>
+                            <p><%= comment.text %></p>
                             <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                                 <form action="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" class="d-inline float-right">
                                     <button class="ui icon button pop" type="submit" data-content="edit Your Comment">
@@ -65,6 +73,6 @@
 
 
 
-
+<link rel="stylesheet" href="/stylesheets/showStyles.css">
 <%- include('../partials/footer'); -%>
 

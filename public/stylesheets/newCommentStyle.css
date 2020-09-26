@@ -1,13 +1,28 @@
 #starsContainer{
-    margin: 2rem 2rem;
+    margin-top: 2.5rem;
     margin-right: 0;
 }
 .fa-star {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .checked{
-    color: gold;
+    color: goldenrod;
 }
 option{
     text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+form{
+    width: 100%;
+    border-radius: 1.2em;
+    background-color: #e6ebf0;
+    padding: 4rem 4rem;
+}
+.btn{
+    margin-top: 3rem;
+}
+label{
+    font-size: 1.3em;
+    font-weight: 500;
 }

@@ -23,18 +23,16 @@
                 <div class="content">
                     <div class="header "> <%= camp.name%> </div>
                     <div class="description">
-                        <%= camp.discription.substring(0,100)%>..
+                        <%= camp.shortDiscrip.substring(0,100)%>
                     </div>
                 </div>
                 <div class="extra">
-                    <div class="header">Users Rating</div>
-                    <div class="ui star rating" data-rating="5"> <% for(i = 0 ; i < (camp.rating.rate)/10 ; i++){ %> <i class="active icon"></i> <%}%> </div>
+                    <div class="header">Users Rating - <%= camp.rating.rate %></div>
+                    <div class="ui star rating" data-rating="5"> <% for(i = 0 ; i < Math.floor((camp.rating.rate)) && i < 5 ; i++){ %> <i class="active icon"></i> <%}%> </div>
                 </div>
-                <div class="ui bottom attached button">
-                    <a href="/campgrounds/<%= camp._id %>">
-                       Find more .. 
+                    <a class="ui bottom attached button" href="/campgrounds/<%= camp._id %>">
+                        Find more ..  
                     </a>    
-                </div>
             </div>
             <% }) %>
         
@@ -45,6 +43,6 @@
     </div>
 
 
-
+<link rel="stylesheet" href="/stylesheets/indexPage.css"
 
 <%- include('../partials/footer'); %>

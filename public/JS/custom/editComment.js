@@ -1,6 +1,17 @@
 //this code just excuted when the page loads
 //this portions of code fill the edit page with the comment data
 /*getting the comment  rate and make it selected*/
+let query = 'select option:nth-child(' + $("#hiddenInput").val() + ')' ;
+console.log(query);
+$(query).attr("selected","");
+/*stars filling*/
+var rate = $("select").val();
+    rate = parseInt(rate);
+    clearStars();
+   for( var i =1 ; i <= rate ; i++){
+       let selector = "#star" + i ;
+       $(selector).addClass("checked");
+   }  
 
 function clearStars () {  
     $('span.fa-star').removeClass('checked');
