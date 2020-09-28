@@ -21,7 +21,7 @@ var campgroundsRoute = require("./routes/campgrounds"),
      App Configuration
      =====================*/
 
-mongoose.connect('mongodb://localhost:27017/yelpCamp_v9',{ useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://yelpCampDB:Q4dW2Y0Ro5c45dKm@babysetps.o3hdg.gcp.mongodb.net/yelpCamp?retryWrites=true&w=majority',{ useNewUrlParser: true,  useUnifiedTopology: true});
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use( expressSession({
