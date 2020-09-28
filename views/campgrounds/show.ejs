@@ -16,7 +16,7 @@
                 <h3 class=" d-inline card-title" > 
                     <a href="#"> <%= camp.name %> </a> 
                 </h3>
-                <h6 class="  d-inline text-muted float-right"> 30 $/night </h6>
+                <h6 class="  d-inline text-muted float-right"> <%= camp.pricePerNight.toFixed(2) %> $/Night </h6>
                 <h6 class="text-muted"> <em>Posted by : <strong> <%= camp.author.name %> </strong> </em></h6>
                 <p class="card-text"> <%= camp.discription %> </p>
              <% if(currentUser){ %>

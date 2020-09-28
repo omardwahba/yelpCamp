@@ -136,12 +136,14 @@ router.delete("/:commentID", middleware.CanUserAlterComment,(req , res) => {
                     //note that the camp owner can't rate so if he deleted his comment
                     //noting should happen
                     if( ! comment.author.id.equals(ownerCamp.author.id)){
-                    ownerCamp.rating.totalRate -= comment.rate ;
-                    ownerCamp.rating.usersRated -- ;
+                        ownerCamp.rating.totalRate -= comment.rate ;
+                        ownerCamp.rating.usersRated -- ;
+                        ownerCamp.save();
+                    }else{
+                        ownerCamp.save(); 
                     }
                 }
             });
-            ownerCamp.save();
             //finally remove the comment from the comment collection in DB 
             Comment.findByIdAndRemove(req.params.commentID , (err)={});
             req.flash("warning", "Comment deleted!  ");

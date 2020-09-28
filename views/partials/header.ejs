@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.min.css" integrity="sha512-OD0ScwZAE5PCg4nATXnm8pdWi0Uk0Pp2XFsFz1xbZ7xcXvapzjvcxxHPeTZKfMjvlwwl4sGOvgJghWF2GRZZDw==" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/popup.min.js" integrity="sha512-784FtIkKrm/QsfPOTifpdvdvzE0y3/c4OSZhu91VxdGMuW7/y7gr8TiYFjuebfK9qE8HgYxFVhMR3nUu+LFbjg==" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/b5b9f336e9.js" crossorigin="anonymous"></script>
           <!-- custom style sheet -->
         <link rel="stylesheet" href="/stylesheets/main.css">
         
@@ -33,7 +35,7 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <a class="navbar-brand" href="/"> YelpCamp</a>
+                <a class="navbar-brand" href="/">YelpCamp <i class="fas fa-campground"></i></a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
@@ -61,8 +63,8 @@
                 <% } %>
              </div>
         </nav>
+        <div id="spacer"></div>  
         <div class="container">
-        <% console.log(flash) %>
         <% if(Object.keys(flash).length > 0){ %>
             <% for( key in flash){ %>
                 <div class="alert alert-<%=key%>"> <%- flash[key] %></div>

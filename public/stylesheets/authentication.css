@@ -1,0 +1,50 @@
+.form-signin{
+    max-width: 350px;
+    max-height: 480px;
+    padding: 1.5rem 1.5rem;
+    margin: auto auto;
+    margin-top: 20vh;
+    background-color: #4bb2f2;
+    border-radius: 10px;
+}
+.form-header{
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color: white;
+    
+
+}
+.form-logo{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+div.form-logo i.fa-campground{
+    font-size: 5rem;
+    border-radius: 5px;
+
+}
+
+#submitButton{
+    background-color: #09497d;
+    color: white;
+    margin: 1.1rem 0;
+}
+#redirectButton{
+    background-color: #a60707;
+    color: white;
+    font-size: 1.1rem;
+
+}
+body{
+    background-color: whitesmoke;
+}
+.form-control{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input-group-text{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
