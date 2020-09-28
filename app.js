@@ -20,8 +20,9 @@ var campgroundsRoute = require("./routes/campgrounds"),
 /* ===================
      App Configuration
      =====================*/
+     console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true,  useUnifiedTopology: true});
 
-mongoose.connect('mongodb+srv://yelpCampDB:Q4dW2Y0Ro5c45dKm@babysetps.o3hdg.gcp.mongodb.net/yelpCamp?retryWrites=true&w=majority',{ useNewUrlParser: true,  useUnifiedTopology: true});
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use( expressSession({
@@ -55,7 +56,10 @@ app.use("/" , indexRoute);
 app.use("/campgrounds", campgroundsRoute);
 app.use("/campgrounds/:id/comments" ,commentRoute);
 
-
-app.listen(3000, function(){
+console.log(process.env.PORT);
+console.log(process.env.IP);
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log('Server has started');
 });
+
+
